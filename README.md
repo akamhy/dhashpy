@@ -1,2 +1,3 @@
 # dhashpy
-dhash Image hashing algorithm
+
+Row-wise gradient dHash algorithm implementation in python.
