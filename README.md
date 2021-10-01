@@ -26,6 +26,49 @@ pip install dhashpy -U
 pip install git+https://github.com/akamhy/dhashpy.git
 ```
 
+### Usage
+```python
+>>> from dhashpy import DHash
+>>> file = "/home/akamhy/Pictures/map_of_maths.png"
+>>> dhash_file = DHash(file)
+>>> dhash_file
+DHash(hash=0b0110010000000011101010111100110111001101100011111000111100001110, hash_hex=0x6403abcdcd8f8f0e, path=/home/akamhy/Pictures/map_of_maths.png)
+>>> 
+>>> dhash_file.hash # A 64-bit hash, notice the prefix "0b" indicating it's binary. Total string length = 64 + 2 = 66
+'0b0110010000000011101010111100110111001101100011111000111100001110'
+>>> 
+>>> len(dhash_file)
+66
+>>> dhash_file.bits_in_hash
+64
+>>> 
+>>> dhash_file.hash_hex
+'0x6403abcdcd8f8f0e'
+>>> 
+>>> dhash_file - "0x6403abcdcd8f8f0e" # You can save the hex value in database to compare later
+0
+>>>
+>>> dhash_file == "0x6403abcdcd8f8f0e" # Both the hex and file have same binary hash.
+True
+>>> 
+>>> dhash_file - "0b0110010000000011101010111100110111001101100011111000111100001110" # You may also save the binary hash value for matching but hex value are smaller
+0
+>>>          
+>>> dhash_file
+dhash_file
+>>> dir(dhash_file)
+['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__sub__', '__subclasshook__', '__weakref__', 'bin2hex', 'bits_in_hash', 'calc_hash', 'hamming_distance', 'hash', 'hash_hex', 'height', 'hex2bin', 'image', 'path', 'width']
+>>> dhash_file.height
+8
+>>> dhash_file.width
+9
+>>> dhash_file.image
+<PIL.Image.Image image mode=L size=9x8 at 0x7F9D324C0580>
+>>> 
+
+```
+
+
 ### License
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/akamhy/dhashpy/blob/main/LICENSE)
 
