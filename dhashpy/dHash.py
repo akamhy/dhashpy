@@ -201,7 +201,6 @@ class DHash(object):
         Implementation based on:
         https://www.hackerfactor.com/blog/index.php?/archives/529-Kind-of-Like-That.html
 
-
         """
         self.image = Image.open(self.path)
         self.image = self.image.convert("L")
@@ -215,4 +214,4 @@ class DHash(object):
                 self.hash += "1"
                 continue
             self.hash += "0"
-        self.hash_hex = str(hex(int(self.hash, 2)))
+        self.hash_hex = self.bin2hex(self.hash)

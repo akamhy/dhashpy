@@ -19,7 +19,8 @@ setup(
     author=about["__author__"],
     author_email=about["__author_email__"],
     url=about["__url__"],
-    download_url="https://github.com/akamhy/dhashpy/archive/%s.tar.gz" % about["__version__"],
+    download_url="https://github.com/akamhy/dhashpy/archive/%s.tar.gz"
+    % about["__version__"],
     keywords=[
         "DHash",
         "image hashing",
