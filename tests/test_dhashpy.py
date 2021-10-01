@@ -48,8 +48,26 @@ def test_all():
     assert (dhash_big_baikal - dhash_small_baikal.hash_hex) == 0
     assert dhash_big_baikal.bits_in_hash == 64
 
+    # The value of hash here does not start with 0b or 0x
+    with pytest.raises(TypeError):
+        assert dhash_big_baikal - "01011010101010101"
+
+    # the length of the binary value is less than the 64 bits, the default
+    with pytest.raises(ValueError):
+        assert dhash_big_baikal - "0b01011010101010101"
+
+    # Prevent end user from passing None for difference
+    with pytest.raises(TypeError):
+        assert (dhash_big_baikal - None)
+
+    # clearly both the Images are same but of different resolution
+    with pytest.raises(AssertionError):
+        assert dhash_big_baikal != dhash_small_baikal
+
+    # only DHash instance, binary and hex are allowed not integer.
     with pytest.raises(TypeError):
         (dhash_big_baikal - 999999)
 
+    # just a made up name that mostly linke will not exist on this test directory
     with pytest.raises(FileNotFoundError):
         DHash(this_dir + "thisfiledoesnotexists.jpg")

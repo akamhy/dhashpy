@@ -143,7 +143,7 @@ class DHash(object):
                       bits as this instance.
         """
         if other is None:
-            raise TypeError("Other hash is None. And it must not be None." % other)
+            raise TypeError("Other hash is None. And it must not be None.")
 
         if isinstance(other, str):
             if other.lower().startswith("0x"):
