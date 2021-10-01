@@ -11,6 +11,7 @@
 <a href="https://github.com/akamhy/dhashpy/actions?query=workflow%3AWindows"><img alt="Build Status" src="https://github.com/akamhy/dhashpy/workflows/Windows/badge.svg"></a>
 <a href="https://codecov.io/gh/akamhy/dhashpy"><img alt="codecov" src="https://codecov.io/gh/akamhy/dhashpy/branch/main/graph/badge.svg?token=HVwlPMnsPA"></a>
 <a href="https://dhashpy.readthedocs.io/en/latest/"><img alt="docs" src="https://readthedocs.org/projects/dhashpy/badge/?version=latest&style=flat"></a>
+<a href="https://github.com/psf/black"><img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
 </p>
 
 
@@ -35,24 +36,24 @@ pip install git+https://github.com/akamhy/dhashpy.git
 >>> dhash_file = DHash(file)
 >>> dhash_file
 DHash(hash=0b0110010000000011101010111100110111001101100011111000111100001110, hash_hex=0x6403abcdcd8f8f0e, path=/home/akamhy/Pictures/map_of_maths.png)
->>> 
+>>>
 >>> dhash_file.hash # A 64-bit hash, notice the prefix "0b" indicating it's binary. Total string length = 64 + 2 = 66
 '0b0110010000000011101010111100110111001101100011111000111100001110'
->>> 
+>>>
 >>> len(dhash_file)
 66
 >>> dhash_file.bits_in_hash
 64
->>> 
+>>>
 >>> dhash_file.hash_hex
 '0x6403abcdcd8f8f0e'
->>> 
+>>>
 >>> dhash_file - "0x6403abcdcd8f8f0e" # You can save the hex value in database to compare later
 0
 >>>
 >>> dhash_file == "0x6403abcdcd8f8f0e" # Both the hex and file have same binary hash.
 True
->>> 
+>>>
 >>> dhash_file - "0b0110010000000011101010111100110111001101100011111000111100001110" # You may also save the binary hash value for matching but hex value are smaller
 0
 >>>          
@@ -66,9 +67,10 @@ dhash_file
 9
 >>> dhash_file.image
 <PIL.Image.Image image mode=L size=9x8 at 0x7F9D324C0580>
->>> 
-
+>>>
 ```
+
+> Docs :  <https://dhashpy.readthedocs.io/en/latest/>
 
 
 ### License

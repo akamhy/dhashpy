@@ -58,7 +58,7 @@ def test_all():
 
     # Prevent end user from passing None for difference
     with pytest.raises(TypeError):
-        assert (dhash_big_baikal - None)
+        assert dhash_big_baikal - None
 
     # clearly both the Images are same but of different resolution
     with pytest.raises(AssertionError):
@@ -72,3 +72,12 @@ def test_all():
     with pytest.raises(FileNotFoundError):
         thisfiledoesnotexists = os.path.join(this_dir, "thisfiledoesnotexists.jpg")
         DHash(thisfiledoesnotexists)
+
+    with pytest.raises(ValueError):
+        DHash.hex2bin("64", 10)
+
+    with pytest.raises(ValueError):
+        DHash.hamming_distance("abcd", "abc")
+
+    with pytest.raises(ValueError):
+        DHash.bin2hex("10101")
