@@ -46,6 +46,7 @@ setup(
     ],
     project_urls={
         "Source": "https://github.com/akamhy/dhashpy",
+        "Documentation": "https://dhashpy.readthedocs.io/en/latest/",
         "Tracker": "https://github.com/akamhy/dhashpy/issues",
     },
 )
