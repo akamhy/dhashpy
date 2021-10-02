@@ -3,9 +3,8 @@
 <h1> dHashPy </h1>
 
 <h3>Row-wise gradient dHash algorithm in python.</h3>
-
   
-  dHash algorithm was originally described at [Kind of Like That - The Hacker Factor Blog](https://www.hackerfactor.com/blog/index.php?/archives/529-Kind-of-Like-That.html)
+dHash algorithm was originally described at <a href="https://www.hackerfactor.com/blog/index.php?/archives/529-Kind-of-Like-That.html" target="_blank">Kind of Like That - The Hacker Factor Blog</a> 
 
 </div>
 
