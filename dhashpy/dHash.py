@@ -182,7 +182,7 @@ class DHash(object):
 
     """
 
-    def __init__(self, path, height=8):
+    def __init__(self, path: str, height: int = 8) -> None:
         """
 
         Check if path exists.
@@ -204,9 +204,6 @@ class DHash(object):
         :rtype: NoneType
         """
         self.path = path
-        self.image = None
-        self.hash = None
-        self.hash_hex = None
         self.height = height
         self.bits_in_hash = self.height * self.height
         self.width = self.height + 1
@@ -216,7 +213,7 @@ class DHash(object):
 
         self._calc_hash()
 
-    def __str__(self):
+    def __str__(self) -> str:
         """
         String representation of the instance of DHash class and is same as DHash.hash
 
@@ -226,7 +223,7 @@ class DHash(object):
         """
         return self.hash
 
-    def __len__(self):
+    def __len__(self) -> int:
         """
         length of the hash, including the prefix 0b. len = bits_in_hash + 2
 
@@ -236,7 +233,7 @@ class DHash(object):
         """
         return len(self.hash)
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         """
         Representation of the instance of DHash class.
 
@@ -250,7 +247,7 @@ class DHash(object):
             self.path,
         )
 
-    def __ne__(self, other):
+    def __ne__(self, other: object) -> bool:
         """
         Implement '!=' on the instance of DHash class.
 
@@ -266,7 +263,7 @@ class DHash(object):
             return False
         return True
 
-    def __eq__(self, other):
+    def __eq__(self, other: object) -> bool:
         """
         Implement '==' on the instance of DHash class.
 
@@ -283,7 +280,7 @@ class DHash(object):
             return True
         return False
 
-    def __sub__(self, other):
+    def __sub__(self, other: object) -> int:
         """
         Implement the usage of '-' on instance of DHash class and
         Also compatibile with hexadecimal and binary strings
@@ -325,7 +322,7 @@ class DHash(object):
             "To calculate difference both of the hashes must be either hexadecimal/binary strings or instance of DHash"
         )
 
-    def _calc_hash(self):
+    def _calc_hash(self) -> None:
         """
         Open the input image using the pillow package.
         Converts the image to greyscale.
@@ -357,7 +354,7 @@ class DHash(object):
         self.hash_hex = DHash.bin2hex(self.hash)
 
     @staticmethod
-    def hamming_distance(string_a, string_b):
+    def hamming_distance(string_a: str, string_b: str) -> int:
         """
         Computes and returns the hamming distance between the
         two input strings.
@@ -382,7 +379,7 @@ class DHash(object):
         return sum(char_1 != char_2 for char_1, char_2 in zip(string_a, string_b))
 
     @staticmethod
-    def hex2bin(hexstr, padding):
+    def hex2bin(hexstr: str, padding: int) -> str:
         """
         Convert the input string from hexadecimal to binary representation.
 
@@ -405,7 +402,7 @@ class DHash(object):
         return "0b" + str(bin(int(hexstr.lower(), 0))).replace("0b", "").zfill(padding)
 
     @staticmethod
-    def bin2hex(binstr):
+    def bin2hex(binstr: str) -> str:
         """
         Converts input string from Binary to hexadecimal representation.
 
