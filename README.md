@@ -50,13 +50,13 @@ DHash(hash=0b0110010000000011101010111100110111001101100011111000111100001110, h
 >>> dhash_file.hash_hex
 '0x6403abcdcd8f8f0e'
 >>>
->>> dhash_file - "0x6403abcdcd8f8f0e" # You can save the hex value in database to compare later
+>>> dhash_file - "0x6403abcdcd8f8f0e"
 0
 >>>
->>> dhash_file == "0x6403abcdcd8f8f0e" # Both the hex and file have same binary hash.
+>>> dhash_file == "0x6403abcdcd8f8f0e"
 True
 >>>
->>> dhash_file - "0b0110010000000011101010111100110111001101100011111000111100001110" # You may also save the binary hash value for matching but hex value are smaller
+>>> dhash_file - "0b0110010000000011101010111100110111001101100011111000111100001110"
 0
 >>>          
 >>> dhash_file
