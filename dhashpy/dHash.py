@@ -45,14 +45,14 @@
       total (n^2 + n) pixels/shade of grey in the image.
 
     - Now compare the adjacent pixels along a row. And if the pixel on the right
-      side of the current pixel is more bright than the current pixel set the bit
-      value to 0 else set the value to 1. As there are (n+1) pixel is a row thus
+      side of the current pixel is brighter than the current pixel then set the bit
+      value to 1 else set the value to 0. As there are (n+1) pixel is a row thus
       there will be n number of differences. Total number of differences for all
       the n rows will be (n^2)bits.
 
     - Join the values from left to right and top to bottom to form a binary
-      string. Don't forget to prefix the string with "0b", indicating that it's
-      a binary string. The length of this binary string should be (n^2 + 2),
+      string. Prefix the string with "0b", indicating that it's
+      a bitstring. The length of this binary string should be (n^2 + 2),
       (n^2) number of bit and 2 for the prefix "0b".
 
     - As the string is a binary string and too long, it's better to store the
@@ -99,8 +99,8 @@
             px(x+1) > px(x) and vice-versa, it's arbitrary but it's very important to be
             consistent.
 
-        - If the next pixel in the same row is a bigger number than the current
-          pixel set the value of pixel's position to 0 else 1. For the last
+        - If the next pixel value in the same row is a bigger(brighter) number than the current
+          pixel set the value of pixel's position to 1 else 0. For the last
           pixel of each row we don't have the value(x) defined and therefore there
           are n values for (n+1) pixels.
 
